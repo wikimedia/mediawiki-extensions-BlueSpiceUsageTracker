@@ -2,7 +2,7 @@
 	"name": "mediawiki/blue-spice-usage-tracker",
 	"type": "mediawiki-extension",
 	"description": "Holds statistical data about extension use",
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-only",
 	"require": {
 		"composer/installers": "~1.0"
 	},
