@@ -22,9 +22,7 @@ class SpecialUsageTracker extends BsSpecialPage {
 	 * Constructor of SpecialUsageTracker class
 	 */
 	public function __construct() {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		parent::__construct( 'UsageTracker' );
-		wfProfileOut( 'BS::'.__METHOD__ );
 	}
 
 	/**
