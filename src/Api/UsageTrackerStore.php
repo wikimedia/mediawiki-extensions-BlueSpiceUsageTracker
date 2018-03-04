@@ -1,5 +1,5 @@
 <?php
-namespace BS\UsageTracker\api;
+namespace BS\UsageTracker\Api;
 class UsageTrackerStore extends \BSApiExtJSStoreBase {
 
 	/**

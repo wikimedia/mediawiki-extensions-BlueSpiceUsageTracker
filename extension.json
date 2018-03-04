@@ -7,7 +7,7 @@
 	"descriptionmsg": "bs-usagetracker-desc",
 	"type": "bluespice",
 	"SpecialPages": {
-		"UsageTracker": "SpecialUsageTracker"
+		"UsageTracker": "\\BS\\UsageTracker\\Special\\UsageTracker"
 	},
 	"bsgExtensions": {
 		"BlueSpiceUsageTracker": {
@@ -24,7 +24,7 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"BlueSpiceUsageTrackerAlias": "src/specials/SpecialUsageTracker.alias.php"
+		"BlueSpiceUsageTrackerAlias": "languages/SpecialUsageTracker.alias.php"
 	},
 	"AutoloadClasses": {
 		"UsageTracker": "UsageTracker.class.php"
