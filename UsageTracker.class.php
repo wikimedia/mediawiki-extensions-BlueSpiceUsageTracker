@@ -46,13 +46,6 @@ class UsageTracker extends BsExtensionMW {
 	protected $aCollectors = array();
 
 	/**
-	 * Basic initialisation of extension, e.g. hooks, permissions, etc.
-	 */
-	public function initExt() {
-		$this->mCore->registerPermission( 'usagetracker-update', [ 'sysop' ], [ 'type' => 'global' ] );
-	}
-
-	/**
 	 * Collects usage data from one or several collectors. If $aConfig is not set
 	 * it fetches all collectors and adds them to job queue. If $aConfig is set,
 	 * it actually collects from the collectors set in config (typically invoked

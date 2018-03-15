@@ -9,12 +9,39 @@
 	"SpecialPages": {
 		"UsageTracker": "\\BS\\UsageTracker\\Special\\UsageTracker"
 	},
-	"bsgExtensions": {
-		"BlueSpiceUsageTracker": {
-			"className": "UsageTracker",
-			"extPath": "/BlueSpiceUsageTracker"
+	"attributes": {
+		"BlueSpiceFoundation": {
+			"Extensions": {
+				"BlueSpiceUsageTracker": {
+					"className": "UsageTracker",
+					"extPath": "/BlueSpiceUsageTracker"
+				}
+			},
+			"PermissionRegistry": {
+				"usagetracker-update": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"demo"
+					]
+				}
+			}
 		}
 	},
+	"GroupPermissions": {
+		"*": {
+			"usagetracker-update": false
+		},
+		"user": {
+			"usagetracker-update": false
+		},
+		"sysop": {
+			"usagetracker-update": true
+		}
+	},
+	"AvailableRights": [
+		"usagetracker-update"
+	],
 	"APIModules": {
 		"bs-usagetracker-store": "BS\\UsageTracker\\api\\UsageTrackerStore"
 	},
