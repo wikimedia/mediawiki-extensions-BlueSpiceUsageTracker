@@ -43,7 +43,7 @@
 		"usagetracker-update"
 	],
 	"APIModules": {
-		"bs-usagetracker-store": "BS\\UsageTracker\\api\\UsageTrackerStore"
+		"bs-usagetracker-store": "BS\\UsageTracker\\Api\\UsageTrackerStore"
 	},
 	"MessagesDirs": {
 		"BlueSpiceUsageTracker": [
