@@ -9,6 +9,9 @@
 	"SpecialPages": {
 		"UsageTracker": "\\BS\\UsageTracker\\Special\\UsageTracker"
 	},
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
 	"attributes": {
 		"BlueSpiceFoundation": {
 			"Extensions": {
