@@ -9,35 +9,37 @@ Ext.define( 'BS.UsageTracker.panel.Manager', {
 				text: mw.message( 'bs-usagetracker-col-identifier' ).plain(),
 				dataIndex: 'identifier',
 				sortable: true,
-				filterable: true,
-				flex: 1
+				flex: 1,
+				filter: {
+					type: 'string'
+				},
 			},
 			{
 				text: mw.message( 'bs-usagetracker-col-desc' ).plain(),
 				dataIndex: 'description',
 				sortable: true,
-				filterable: true,
-				width: '50%'
+				width: '50%',
+				filter: {
+					type: 'string'
+				},
 			},
 			{
 				text: mw.message( 'bs-usagetracker-col-last-updated' ).plain(),
 				dataIndex: 'updateDate',
 				sortable: true,
-				filterable: false,
+				flex: 1,
 				filter: {
 					type: 'date'
 				},
-				flex: 1
 			},
 			{
 				text: mw.message( 'bs-usagetracker-col-count' ).plain(),
 				dataIndex: 'count',
 				sortable: true,
+				width: '20px',
 				filter: {
-					type: 'int'
+					type: 'numeric'
 				},
-				filterable: true,
-				width: '20px'
 			}
 		];
 
