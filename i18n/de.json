@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Hwboehm"
 		]
 	},
 	"bs-usagetracker-desc": "Enthält statistische Daten über die Nutzung der Erweiterung",
@@ -18,5 +19,6 @@
 	"bs-usagetracker-tag-collector-desc": "Anzahl der Seiten, die das Tag <$1> nutzen",
 	"bs-usagetracker-db-collector-desc": "Anzahl von $1",
 	"bs-usagetracker-open-tasks": "Die Plattform wird gerade analysiert. {{PLURAL:$1|Eine Analyse steht|$1 Analysen stehen}} noch aus. <a href='$2'>(Neu laden)</a>",
+	"apihelp-bs-usagetracker-store-summary": "Enthält statistische Daten zur Verwendung von Erweiterungen",
 	"right-usagetracker-update": "Zugriff auf die erneute Ausführung des Aktualisierungsprozesses gewähren, der alle verfolgten Daten auf der Spezialseite [[Special:UsageTracker]] sammelt."
 }
