@@ -36,7 +36,7 @@ class UsageTracker extends \BsSpecialPage {
 
 		$oRequest = $this->getRequest();
 
-		// Handle update requests (in case the user has the neccesary rights)
+		// Handle update requests (in case the user has the necessary rights)
 		if ( $this->getUser()->isAllowed( 'usagetracker-update') ) {
 			if ( $oRequest->wasPosted() ) {
 				$aData = \BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData();
