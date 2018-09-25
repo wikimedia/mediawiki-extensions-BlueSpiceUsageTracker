@@ -82,11 +82,10 @@ class UsageTracker extends \BsSpecialPage {
 		if ( $this->iOpenTasks > 0 ) {
 			$this->getOutput()->addHTML( \Html::openElement( 'b' ) );
 			$this->getOutput()->addHTML(
-				$this->msg(
-					'bs-usagetracker-open-tasks',
+				$this->msg( 'bs-usagetracker-open-tasks' )->params([
 					$this->iOpenTasks,
 					\SpecialPage::getTitleFor( 'UsageTracker' )->getLinkURL()
-				)->text()
+				])->text()
 			);
 			$this->getOutput()->addHTML( \Html::closeElement( 'b' ) );
 		} else {
