@@ -15,7 +15,7 @@
  */
 namespace BS\UsageTracker\Special;
 
-class UsageTracker extends \BsSpecialPage {
+class UsageTracker extends \BlueSpice\SpecialPage {
 
 	public $iOpenTasks = null;
 
