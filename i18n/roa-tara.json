@@ -4,7 +4,11 @@
 			"Joetaras"
 		]
 	},
+	"bs-usagetracker-desc": "Tène date statistece sus a l'ause de l'estenzione",
+	"prefs-usagetracker": "Tracciatore d'Ause",
+	"usagetracker": "Tracciatore d'Ause",
 	"bs-usagetracker-startjobs": "Careche mò",
+	"bs-usagetracker-create-statistics": "Aggiorne le statisteche de ause",
 	"bs-usagetracker-col-identifier": "Idendificatore",
 	"bs-usagetracker-col-desc": "Descrizione",
 	"bs-usagetracker-col-count": "Condegge",
