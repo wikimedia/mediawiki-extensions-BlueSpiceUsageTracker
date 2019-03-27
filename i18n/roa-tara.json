@@ -13,5 +13,11 @@
 	"bs-usagetracker-col-desc": "Descrizione",
 	"bs-usagetracker-col-count": "Condegge",
 	"bs-usagetracker-col-last-updated": "Urteme aggiornamende",
-	"bs-usagetracker-db-collector-desc": "Numere de $1"
+	"bs-usagetracker-caution": "Iapre l'uecchije: l'aggiornamende de le statisteche de ause pò vulè 'nu belle picche de tiembe e resorse. Attive l'aggiornamende sulamende quanne tìne avveramende abbesogne de le date de mò. L'aggiornamende avène eseguite cu de le fatìe ca se fanne apprisse, e quinde pò essere necessarie recarecà cchiù vote 'nzigne a quanne le date non g'avènene combletamende cugghiute.",
+	"bs-usagetracker-base-collector-desc": "Numere de le pàggene ca ausane $1",
+	"bs-usagetracker-tag-collector-desc": "Numere de le pàggene ca ausane 'u tag <$1>",
+	"bs-usagetracker-db-collector-desc": "Numere de $1",
+	"bs-usagetracker-open-tasks": "L'analisi d'u site ste avène fatte mò. {{PLURAL:$1|'N'analisi jè|$1 analisi sò}} angore aperte. <a href='$2'>(Aggiorne)</a>",
+	"apihelp-bs-usagetracker-store-summary": "Mandène le date de le statisteche sus a l'ause de l'estenzione",
+	"right-usagetracker-update": "Dèje l'accesse a langià arrete 'u processe de aggiornamende, ca collezzione tutte le date tracciate sus 'a pàgena speciale [[Special:UsageTracker]]."
 }
