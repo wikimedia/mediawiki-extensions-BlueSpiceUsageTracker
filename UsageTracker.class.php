@@ -27,7 +27,7 @@
  * @package    BlueSpice_Extensions
  * @subpackage Usage Tracker
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
+ * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
 
@@ -37,20 +37,20 @@ class UsageTracker extends BsExtensionMW {
 	 * Contains the configuration for collectors
 	 * @var array Config array
 	 */
-	public $aCollectorsConfig = array();
+	public $aCollectorsConfig = [];
 
 	/**
 	 * Contains all potential collectors
 	 * @var array Object array of BS\\UsageTracker\\Collectors\\Base
 	 */
-	protected $aCollectors = array();
+	protected $aCollectors = [];
 
 	/**
 	 * Collects usage data from one or several collectors. If $aConfig is not set
 	 * it fetches all collectors and adds them to job queue. If $aConfig is set,
 	 * it actually collects from the collectors set in config (typically invoked
 	 * from job queue and only one collector)
-	 * @param array $aConfig
+	 * @param array|null $aConfig
 	 * @return BS\UsageTracker\CollectorResult[]
 	 */
 	public function getUsageData( $aConfig = null ) {
@@ -75,7 +75,7 @@ class UsageTracker extends BsExtensionMW {
 			// Each usage number is only stored once. So delete any old values first.
 			$dbw->delete(
 				'bs_usagetracker',
-				['ut_identifier' => $oData->identifier]
+				[ 'ut_identifier' => $oData->identifier ]
 			);
 			// Update the count
 			$dbw->insert(
@@ -96,7 +96,7 @@ class UsageTracker extends BsExtensionMW {
 	/**
 	 * Load existing data from the database instead of collecting it on the fly,
 	 * as collecting data might be very ressource intense.
-	 * @param array $aConfig
+	 * @param array|null $aConfig
 	 * @return BS\UsageTracker\CollectorResult[]
 	 */
 	public function getUsageDataFromDB( $aConfig = null ) {
@@ -111,10 +111,10 @@ class UsageTracker extends BsExtensionMW {
 			],
 			[],
 			__METHOD__,
-			['ORDER BY' => 'ut_identifier']
+			[ 'ORDER BY' => 'ut_identifier' ]
 		);
-		$aData = array();
-		while( $oRow = $dbr->fetchObject( $res ) ) {
+		$aData = [];
+		while ( $oRow = $dbr->fetchObject( $res ) ) {
 			$aData[] = BS\UsageTracker\CollectorResult::newFromDBRow( $oRow );
 		}
 		return $aData;
@@ -123,16 +123,15 @@ class UsageTracker extends BsExtensionMW {
 	/**
 	 * Gets all available collector if $aConfig is null, otherwise uses collectors
 	 * as given in config
-	 * @param array $aConfig
-	 * @return boolean
+	 * @param array|null $aConfig
+	 * @return bool
 	 */
 	protected function initializeCollectors( $aConfig = null ) {
-
 		if ( is_null( $aConfig ) ) {
 			// Get all the collectors definitions
-			Hooks::run( 'BSUsageTrackerRegisterCollectors', array( &$this->aCollectorsConfig ) );
+			Hooks::run( 'BSUsageTrackerRegisterCollectors', [ &$this->aCollectorsConfig ] );
 		} else {
-			$this->aCollectorsConfig = array();
+			$this->aCollectorsConfig = [];
 			$this->aCollectorsConfig[] = $aConfig;
 		}
 
@@ -161,12 +160,12 @@ class UsageTracker extends BsExtensionMW {
 	/**
 	 * Adds the table to the database
 	 * @param DatabaseUpdater $updater
-	 * @return boolean Always true to keep hook running
+	 * @return bool Always true to keep hook running
 	 */
 	public static function getSchemaUpdates( $updater ) {
 		$updater->addExtensionTable(
 			'bs_usagetracker',
-			__DIR__ .'/db/mysql/UsageTracker.sql'
+			__DIR__ . '/db/mysql/UsageTracker.sql'
 		);
 		return true;
 	}

@@ -10,7 +10,7 @@
  * @package    BlueSpice_Extensions
  * @subpackage UsageTracker
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
+ * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
 namespace BS\UsageTracker\Special;
@@ -37,7 +37,7 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 		$oRequest = $this->getRequest();
 
 		// Handle update requests (in case the user has the necessary rights)
-		if ( $this->getUser()->isAllowed( 'usagetracker-update') ) {
+		if ( $this->getUser()->isAllowed( 'usagetracker-update' ) ) {
 			if ( $oRequest->wasPosted() ) {
 				$aData = \BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData();
 				// JobQueue...getSize is not updated fast enough, so we use the
@@ -58,7 +58,7 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 		$this->getOutput()->addModules( 'ext.UsageTracker.manager' );
 		$this->getOutput()->addHTML( \Html::element( 'div', [
 			'id' => 'bs-usagetracker-manager'
-		]));
+		] ) );
 	}
 
 	/**
@@ -82,10 +82,10 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 		if ( $this->iOpenTasks > 0 ) {
 			$this->getOutput()->addHTML( \Html::openElement( 'b' ) );
 			$this->getOutput()->addHTML(
-				$this->msg( 'bs-usagetracker-open-tasks' )->params([
+				$this->msg( 'bs-usagetracker-open-tasks' )->params( [
 					$this->iOpenTasks,
 					\SpecialPage::getTitleFor( 'UsageTracker' )->getLinkURL()
-				])->text()
+				] )->text()
 			);
 			$this->getOutput()->addHTML( \Html::closeElement( 'b' ) );
 		} else {
@@ -98,8 +98,8 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 			);
 		}
 		$this->getOutput()->addHTML(
-			\Html::closeElement('fieldset') .
-			\Html::closeElement('form') . "\n"
+			\Html::closeElement( 'fieldset' ) .
+			\Html::closeElement( 'form' ) . "\n"
 		);
 	}
 

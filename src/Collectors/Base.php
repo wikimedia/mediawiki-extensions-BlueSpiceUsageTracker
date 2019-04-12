@@ -1,5 +1,6 @@
 <?php
 namespace BS\UsageTracker\Collectors;
+
 use BS\UsageTracker\Jobs\UsageTrackerCollectJob;
 
 abstract class Base {
@@ -10,7 +11,7 @@ abstract class Base {
 	 * Initial configuration. Needed to register as job
 	 * @var type
 	 */
-	protected $config = array();
+	protected $config = [];
 
 	public function __construct( $config ) {
 		if ( isset( $config['config'] ) && is_array( $config['config'] ) ) {

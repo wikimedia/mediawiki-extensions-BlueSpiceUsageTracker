@@ -1,8 +1,9 @@
 <?php
 namespace BS\UsageTracker\Collectors;
+
 class Property extends Base {
 
-	public function __construct( $aConfig = array() ) {
+	public function __construct( $aConfig = [] ) {
 		parent::__construct( $aConfig );
 	}
 

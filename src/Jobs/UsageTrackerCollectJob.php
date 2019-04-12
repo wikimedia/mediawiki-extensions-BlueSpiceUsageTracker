@@ -12,7 +12,7 @@ class UsageTrackerCollectJob extends \Job {
 	 * Configuration of the job
 	 * @var array
 	 */
-	protected $config = array();
+	protected $config = [];
 
 	/**
 	 * @param Title $title
@@ -25,6 +25,7 @@ class UsageTrackerCollectJob extends \Job {
 
 	/**
 	 * Run the job of collecting usage data for a given collector
+	 * @return true
 	 */
 	public function run() {
 		\BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData( $this->config );
