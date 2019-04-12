@@ -1,12 +1,13 @@
 <?php
 namespace BS\UsageTracker\Collectors;
+
 class Database extends Base {
 
 	protected $table;
 	protected $uniqueColumns;
 	protected $descKey = 'bs-usagetracker-db-collector-desc';
 
-	public function __construct( $config = array() ) {
+	public function __construct( $config = [] ) {
 		parent::__construct( $config );
 		if ( isset( $config['config'] ) && is_array( $config['config'] ) ) {
 			if ( isset( $config['config']['table'] ) ) {

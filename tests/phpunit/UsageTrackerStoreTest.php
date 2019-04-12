@@ -41,14 +41,15 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 		];
 	}
 
-	protected function createStoreFixtureData() {}
+	protected function createStoreFixtureData() {
+ }
 
 	public function addDBData() {
-		$aFixtureData = array(
-			array( 'ut_identifier' => 'dummy', 'ut_count' => 2, 'ut_type' => 'BS\UsageTracker\Collectors\Property', 'ut_timestamp' => wfTimestampNow () ),
-			array( 'ut_identifier' => 'dummy2', 'ut_count' => 4, 'ut_type' => 'BS\UsageTracker\Collectors\Property', 'ut_timestamp' => wfTimestampNow () ),
-			array( 'ut_identifier' => 'test', 'ut_count' => 8, 'ut_type' => 'BS\UsageTracker\Collectors\Property', 'ut_timestamp' => wfTimestampNow () )
-		);
+		$aFixtureData = [
+			[ 'ut_identifier' => 'dummy', 'ut_count' => 2, 'ut_type' => 'BS\UsageTracker\Collectors\Property', 'ut_timestamp' => wfTimestampNow() ],
+			[ 'ut_identifier' => 'dummy2', 'ut_count' => 4, 'ut_type' => 'BS\UsageTracker\Collectors\Property', 'ut_timestamp' => wfTimestampNow() ],
+			[ 'ut_identifier' => 'test', 'ut_count' => 8, 'ut_type' => 'BS\UsageTracker\Collectors\Property', 'ut_timestamp' => wfTimestampNow() ]
+		];
 
 		$this->db->insert(
 			'bs_usagetracker',
@@ -93,11 +94,10 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	public function provideKeyItemData() {
-		return array(
+		return [
 			[ 'identifier', 'test' ],
 			[ 'identifier', 'dummy' ],
 			[ 'count', '8' ]
-		);
+		];
 	}
 }
-

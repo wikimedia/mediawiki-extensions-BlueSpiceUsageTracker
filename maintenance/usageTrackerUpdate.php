@@ -11,10 +11,10 @@
  * runJobs, however, should be run on a cronjob anyways.
  */
 
-//We are on <mediawiki>/extensions/BlueSpiceUsageTracker/maintenance
+// We are on <mediawiki>/extensions/BlueSpiceUsageTracker/maintenance
 $IP = realpath( dirname( dirname( __DIR__ ) ) );
 
-require_once( $IP.'/BlueSpiceFoundation/maintenance/BSMaintenance.php' );
+require_once $IP . '/BlueSpiceFoundation/maintenance/BSMaintenance.php';
 
 class UsageTrackerUpdate extends BSMaintenance {
 	public function __construct() {

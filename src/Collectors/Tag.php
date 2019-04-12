@@ -1,10 +1,11 @@
 <?php
 namespace BS\UsageTracker\Collectors;
+
 class Tag extends Base {
 
 	protected $descKey = 'bs-usagetracker-tag-collector-desc';
 
-	public function __construct( $aConfig = array() ) {
+	public function __construct( $aConfig = [] ) {
 		parent::__construct( $aConfig );
 	}
 
@@ -16,10 +17,10 @@ class Tag extends Base {
 			[ 'old_text LIKE "%' . $this->identifier . '%"' ],
 			__METHOD__,
 			[],
-			array(
+			[
 				'revision' => [ 'JOIN', [ 'page_latest=rev_id' ] ],
 				'text' => [ 'JOIN', [ 'rev_text_id=old_id' ] ]
-			)
+			]
 		);
 
 		$oRes = new \BS\UsageTracker\CollectorResult( $this );
