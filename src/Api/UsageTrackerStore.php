@@ -1,5 +1,6 @@
 <?php
 namespace BS\UsageTracker\Api;
+
 class UsageTrackerStore extends \BSApiExtJSStoreBase {
 
 	/**
@@ -12,15 +13,15 @@ class UsageTrackerStore extends \BSApiExtJSStoreBase {
 			->getBSExtensionFactory()
 			->getExtension( 'BlueSpiceUsageTracker' );
 		$aRes = $extension->getUsageDataFromDB();
-		foreach( $aRes as $oCollectorResult ) {
+		foreach ( $aRes as $oCollectorResult ) {
 			$aData[] = $this->makeDataRow( $oCollectorResult );
 		}
 		return $aData;
 	}
 
 	protected function makeDataRow( \BS\UsageTracker\CollectorResult $oCollectorResult ) {
-		return (object) array_merge(
-			(array) $oCollectorResult,
+		return (object)array_merge(
+			(array)$oCollectorResult,
 			[
 				'description' => $oCollectorResult->getDescription(),
 				'updateDate' => $this->getLanguage()->timeanddate(

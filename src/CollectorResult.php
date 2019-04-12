@@ -8,7 +8,7 @@ class CollectorResult {
 	public $type = '';
 	public $updateDate = '';
 
-	public function __construct( $oCollector=null ) {
+	public function __construct( $oCollector = null ) {
 		if ( is_object( $oCollector ) && ( $oCollector instanceof Collectors\Base ) ) {
 			$this->descriptionKey = $oCollector->getDescriptionKey();
 			$this->identifier = $oCollector->getIdentifier();
@@ -37,8 +37,8 @@ class CollectorResult {
 		return wfMessage(
 			$this->descriptionKey,
 			wfMessage( $this->identifier )->exists()
-				?wfMessage( $this->identifier )->text()
-				:$this->identifier
+				? wfMessage( $this->identifier )->text()
+				: $this->identifier
 			)->text();
 	}
 }
