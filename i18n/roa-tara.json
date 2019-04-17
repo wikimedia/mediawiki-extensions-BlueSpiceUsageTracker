@@ -19,5 +19,6 @@
 	"bs-usagetracker-db-collector-desc": "Numere de $1",
 	"bs-usagetracker-open-tasks": "L'analisi d'u site ste avène fatte mò. {{PLURAL:$1|'N'analisi jè|$1 analisi sò}} angore aperte. <a href='$2'>(Aggiorne)</a>",
 	"apihelp-bs-usagetracker-store-summary": "Mandène le date de le statisteche sus a l'ause de l'estenzione",
+	"action-usagetracker-update": "dèje l'accesse a langià arrete 'u processe de aggiornamende, ca collezzione tutte le date tracciate sus 'a pàgena speciale [[Special:UsageTracker]].",
 	"right-usagetracker-update": "Dèje l'accesse a langià arrete 'u processe de aggiornamende, ca collezzione tutte le date tracciate sus 'a pàgena speciale [[Special:UsageTracker]]."
 }
