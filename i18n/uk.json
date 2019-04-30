@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"Vlad5250"
 		]
 	},
 	"bs-usagetracker-desc": "Містить статистичні дані про використання розширення",
@@ -19,5 +20,6 @@
 	"bs-usagetracker-db-collector-desc": "Кількість $1",
 	"bs-usagetracker-open-tasks": "Наразі відбувається аналіз сайту. {{PLURAL:$1|$1 аналіз|$1 аналізи|$1 аналізів}} все ще в процесі. <a href='$2'>(Оновити)</a>",
 	"apihelp-bs-usagetracker-store-summary": "Зберігає статистичні дані про використання розширення",
-	"right-usagetracker-update": "надає доступ до повторного запуску процесу оновлення, який збирає всі відстежувані дані на спеціальній сторінці [[Special:UsageTracker]]"
+	"action-usagetracker-update": "надає доступ до повторного запуску процесу оновлення, який збирає всі відстежувані дані на спеціальній сторінці [[Special:UsageTracker]]",
+	"right-usagetracker-update": "надає доступ до повторного запуску процесу оновлення, який збирає всі відстежувані дані на спеціальній сторінці [[Special:UsageTracker]]."
 }
