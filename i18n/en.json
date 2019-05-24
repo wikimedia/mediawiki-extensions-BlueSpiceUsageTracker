@@ -19,6 +19,6 @@
 	"bs-usagetracker-db-collector-desc": "Number of $1",
 	"bs-usagetracker-open-tasks" : "Site analysis is currently in progress. {{PLURAL:$1|One analysis is|$1 analyses are}} still open. <a href='$2'>(Refresh)</a>",
 	"apihelp-bs-usagetracker-store-summary": "Holds statistical data about extension use",
-	"action-usagetracker-update": "access to re-run the update process, that collects all the tracked data on the [[Special:UsageTracker]] special page.",
+	"action-usagetracker-update": "re-run the update process, that collects all the tracked data on the [[Special:UsageTracker]] special page",
 	"right-usagetracker-update": "Access to re-run the update process, that collects all the tracked data on the [[Special:UsageTracker]] special page."
 }
