@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sayginer"
+			"Sayginer",
+			"Mirzali"
 		]
 	},
-	"bs-usagetracker-startjobs": "Şimdi güncelle"
+	"bs-usagetracker-startjobs": "Şimdi güncelle",
+	"action-usagetracker-update": "[[Special:UsageTracker]] özel sayfasındaki izlenen tüm verileri toplayan güncelleme işlemini yeniden çalıştırın"
 }
