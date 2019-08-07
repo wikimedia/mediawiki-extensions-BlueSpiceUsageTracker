@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Kly",
-			"A2093064"
+			"A2093064",
+			"Winston Sung"
 		]
 	},
 	"bs-usagetracker-desc": "保留有關擴充功能使用的統計資料",
@@ -11,7 +12,7 @@
 	"usagetracker": "使用追蹤",
 	"bs-usagetracker-startjobs": "現在更新",
 	"bs-usagetracker-create-statistics": "更新使用統計",
-	"bs-usagetracker-col-identifier": "識別",
+	"bs-usagetracker-col-identifier": "識別碼",
 	"bs-usagetracker-col-desc": "描述",
 	"bs-usagetracker-col-count": "計數",
 	"bs-usagetracker-col-last-updated": "上一次更新",
