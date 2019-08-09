@@ -20,5 +20,6 @@
 	"bs-usagetracker-db-collector-desc": "رقم $1",
 	"bs-usagetracker-open-tasks": "تحليل الموقع قيد التقدم حاليا، {{PLURAL:$1|تحليل واحد لا يزال مفتوحا|$1 تحليلات لا تزال مفتوحة}}. <a href='$2'>(تحديث)</a>",
 	"apihelp-bs-usagetracker-store-summary": "يحمل البيانات الإحصائية حول استخدام التمديد",
-	"right-usagetracker-update": "يمنح الوصول إلى إعادة تشغيل عملية التحديث، التي تجمع جميع البيانات المتعقبة في الصفحة الخاصة [[Special:UsageTracker]]."
+	"right-usagetracker-update": "الوصول إلى إعادة تشغيل عملية التحديث، التي تجمع جميع البيانات المتعقبة في الصفحة الخاصة [[Special:UsageTracker]].",
+	"action-usagetracker-update": "إعادة تشغيل عملية التحديث، التي تجمع جميع البيانات المتعقبة في الصفحة الخاصة [[Special:UsageTracker]]."
 }
