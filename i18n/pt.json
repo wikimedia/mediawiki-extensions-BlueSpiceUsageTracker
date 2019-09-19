@@ -4,7 +4,8 @@
 			"Vitorvicentevalente",
 			"Mansil",
 			"Hamilton Abreu",
-			"Athena in Wonderland"
+			"Athena in Wonderland",
+			"Mansil alfalb"
 		]
 	},
 	"bs-usagetracker-desc": "Contém dados estatísticos sobre a utilização da extensão",
@@ -23,5 +24,5 @@
 	"bs-usagetracker-open-tasks": "A análise do sítio está em progresso. Ainda {{PLURAL:$1|está em aberto uma análise|estão em aberto $1 análises}}. <a href='$2'>(Recarregar)</a>",
 	"apihelp-bs-usagetracker-store-summary": "Contém dados estatísticos sobre o uso da extensão",
 	"right-usagetracker-update": "Acesso para re-executar o processo de atualização, que colige na página especial [[Special:UsageTracker]] todos os dados monitorizados.",
-	"action-usagetracker-update": "acesso para re-executar o processo de atualização, que colige na página especial [[Special:UsageTracker]] todos os dados monitorizados."
+	"action-usagetracker-update": "volte a executar o processo de atualização, que recolhe todos os dados rastreados na página especial [[Special:UsageTracker]]"
 }
