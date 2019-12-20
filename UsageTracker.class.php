@@ -114,7 +114,7 @@ class UsageTracker extends BsExtensionMW {
 			[ 'ORDER BY' => 'ut_identifier' ]
 		);
 		$aData = [];
-		while ( $oRow = $dbr->fetchObject( $res ) ) {
+		foreach ( $res as $oRow ) {
 			$aData[] = BS\UsageTracker\CollectorResult::newFromDBRow( $oRow );
 		}
 		return $aData;

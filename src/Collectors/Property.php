@@ -3,10 +3,18 @@ namespace BS\UsageTracker\Collectors;
 
 class Property extends Base {
 
+	/**
+	 *
+	 * @param array $aConfig
+	 */
 	public function __construct( $aConfig = [] ) {
 		parent::__construct( $aConfig );
 	}
 
+	/**
+	 *
+	 * @return \BS\UsageTracker\CollectorResult
+	 */
 	public function getUsageData() {
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
