@@ -7,6 +7,10 @@ class Database extends Base {
 	protected $uniqueColumns;
 	protected $descKey = 'bs-usagetracker-db-collector-desc';
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( $config = [] ) {
 		parent::__construct( $config );
 		if ( isset( $config['config'] ) && is_array( $config['config'] ) ) {
@@ -22,6 +26,11 @@ class Database extends Base {
 		};
 	}
 
+	/**
+	 *
+	 * @return \BS\UsageTracker\CollectorResult
+	 * @throws \MWException
+	 */
 	public function getUsageData() {
 		$oRes = new \BS\UsageTracker\CollectorResult( $this );
 		if ( !$this->table || !$this->uniqueColumns ) {
