@@ -13,6 +13,10 @@ abstract class Base {
 	 */
 	protected $config = [];
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( $config ) {
 		if ( isset( $config['config'] ) && is_array( $config['config'] ) ) {
 			if ( isset( $config['config']['identifier'] ) ) {
@@ -22,16 +26,32 @@ abstract class Base {
 		$this->config = $config;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getDescriptionKey() {
 		return $this->descKey;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getIdentifier() {
 		return $this->identifier;
 	}
 
+	/**
+	 *
+	 * @return \BS\UsageTracker\CollectorResult
+	 */
 	abstract public function getUsageData();
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function registerJob() {
 		$oJob = new UsageTrackerCollectJob(
 			\Title::newFromText( $this->identifier . wfTimestampNow() ),

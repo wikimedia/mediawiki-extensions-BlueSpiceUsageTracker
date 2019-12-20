@@ -19,6 +19,11 @@ class UsageTrackerStore extends \BSApiExtJSStoreBase {
 		return $aData;
 	}
 
+	/**
+	 *
+	 * @param \BS\UsageTracker\CollectorResult $oCollectorResult
+	 * @return \stdClass
+	 */
 	protected function makeDataRow( \BS\UsageTracker\CollectorResult $oCollectorResult ) {
 		return (object)array_merge(
 			(array)$oCollectorResult,
