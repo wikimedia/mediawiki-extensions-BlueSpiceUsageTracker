@@ -58,7 +58,7 @@ class UsageTracker extends BsExtensionMW {
 
 		// If there is no specific collector, register all known collectors and
 		// add them to job queue for deferred collecting
-		if ( is_null( $aConfig ) ) {
+		if ( $aConfig === null ) {
 			foreach ( $this->aCollectors as $oCollector ) {
 				$oCollector->registerJob();
 			}
@@ -127,7 +127,7 @@ class UsageTracker extends BsExtensionMW {
 	 * @return bool
 	 */
 	protected function initializeCollectors( $aConfig = null ) {
-		if ( is_null( $aConfig ) ) {
+		if ( $aConfig === null ) {
 			// Get all the collectors definitions
 			Hooks::run( 'BSUsageTrackerRegisterCollectors', [ &$this->aCollectorsConfig ] );
 		} else {

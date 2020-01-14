@@ -23,7 +23,7 @@ class Database extends Base {
 					? $config['config']['uniqueColumns']
 					: [ $config['config']['uniqueColumns'] ];
 			}
-		};
+		}
 	}
 
 	/**

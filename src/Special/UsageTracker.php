@@ -6,7 +6,7 @@
  * Part of BlueSpice MediaWiki
  *
  * @author     Markus Glaser <glaser@hallowelt.com>
-
+ *
  * @package    BlueSpice_Extensions
  * @subpackage UsageTracker
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.

@@ -22,7 +22,7 @@ abstract class Base {
 			if ( isset( $config['config']['identifier'] ) ) {
 				$this->identifier = $config['config']['identifier'];
 			}
-		};
+		}
 		$this->config = $config;
 	}
 
