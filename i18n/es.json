@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"Igv",
-			"Fitoschido"
+			"Fitoschido",
+			"DannyS712"
 		]
 	},
 	"bs-usagetracker-desc": "Contiene datos estadísticos acerca del uso de la extensión",
@@ -19,5 +20,5 @@
 	"bs-usagetracker-base-collector-desc": "Número de páginas que usan $1",
 	"bs-usagetracker-tag-collector-desc": "Número de páginas que usan la etiqueta <$1>",
 	"bs-usagetracker-db-collector-desc": "cantidad de $1",
-	"right-usagetracker-update": "Otorga acceso para volver a ejecutar el proceso de actualización que recopila todos los datos en seguimiento a través de la página especial [[Special:UsageTracker]]."
+	"right-usagetracker-update": "Acceso para volver a ejecutar el proceso de actualización que recopila todos los datos en seguimiento a través de la página especial [[Special:UsageTracker]]."
 }
