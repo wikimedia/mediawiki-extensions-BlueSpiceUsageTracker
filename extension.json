@@ -69,7 +69,7 @@
 		"UsageTracker": "UsageTracker.class.php"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "UsageTracker::getSchemaUpdates"
+		"LoadExtensionSchemaUpdates": "BS\\UsageTracker\\Hook\\LoadExtensionSchemaUpdates\\AddUsageTrackerTable::callback"
 	},
 	"JobClasses": {
 		"usageTrackerCollectJob": "BS\\UsageTracker\\Jobs\\UsageTrackerCollectJob"
