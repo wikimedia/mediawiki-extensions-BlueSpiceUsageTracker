@@ -157,16 +157,4 @@ class UsageTracker extends BsExtensionMW {
 		return true;
 	}
 
-	/**
-	 * Adds the table to the database
-	 * @param DatabaseUpdater $updater
-	 * @return bool Always true to keep hook running
-	 */
-	public static function getSchemaUpdates( $updater ) {
-		$updater->addExtensionTable(
-			'bs_usagetracker',
-			__DIR__ . '/db/mysql/UsageTracker.sql'
-		);
-		return true;
-	}
 }
