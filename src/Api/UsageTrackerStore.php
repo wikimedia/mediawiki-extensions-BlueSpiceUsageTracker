@@ -10,7 +10,7 @@ class UsageTrackerStore extends \BSApiExtJSStoreBase {
 	protected function makeData( $sQuery = '' ) {
 		$aData = [];
 		$extension = \BlueSpice\Services::getInstance()
-			->getBSExtensionFactory()
+			->getService( 'BSExtensionFactory' )
 			->getExtension( 'BlueSpiceUsageTracker' );
 		$aRes = $extension->getUsageDataFromDB();
 		foreach ( $aRes as $oCollectorResult ) {
