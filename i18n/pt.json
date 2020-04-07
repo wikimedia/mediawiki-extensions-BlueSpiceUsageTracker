@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente",
-			"Mansil",
-			"Hamilton Abreu",
 			"Athena in Wonderland",
-			"Mansil alfalb"
+			"Hamilton Abreu",
+			"Mansil",
+			"Mansil alfalb",
+			"Vitorvicentevalente"
 		]
 	},
 	"bs-usagetracker-desc": "Contém dados estatísticos sobre a utilização da extensão",

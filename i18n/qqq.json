@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Markus Glaser <glaser@hallowelt.com>",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Markus Glaser <glaser@hallowelt.com>"
 		]
 	},
 	"bs-usagetracker-desc": "Used in [{{canonicalurl:Special:Usage_Tracker}} Special:Usage_Tracker], description of usagetracker extension",
