@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"Igv",
+			"DannyS712",
 			"Fitoschido",
-			"DannyS712"
+			"Igv",
+			"Macofe"
 		]
 	},
 	"bs-usagetracker-desc": "Contiene datos estadísticos acerca del uso de la extensión",
