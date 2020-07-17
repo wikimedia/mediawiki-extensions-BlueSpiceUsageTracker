@@ -4,5 +4,7 @@
 			"Saederup92"
 		]
 	},
-	"bs-usagetracker-col-desc": "Beskrivelse"
+	"bs-usagetracker-startjobs": "Opdater nu",
+	"bs-usagetracker-col-desc": "Beskrivelse",
+	"bs-usagetracker-col-last-updated": "Sidst opdateret"
 }
