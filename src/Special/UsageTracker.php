@@ -15,6 +15,8 @@
  */
 namespace BS\UsageTracker\Special;
 
+use MediaWiki\MediaWikiServices;
+
 class UsageTracker extends \BlueSpice\SpecialPage {
 
 	public $iOpenTasks = null;
@@ -37,7 +39,11 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 		$oRequest = $this->getRequest();
 
 		// Handle update requests (in case the user has the necessary rights)
-		if ( $this->getUser()->isAllowed( 'usagetracker-update' ) ) {
+		$isAllowed = MediaWikiServices::getInstance()->getPermissionManager()->userHasRight(
+			$this->getUser(),
+			'usagetracker-update'
+		);
+		if ( $isAllowed ) {
 			if ( $oRequest->wasPosted() ) {
 				$aData = \BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData();
 				// JobQueue...getSize is not updated fast enough, so we use the
