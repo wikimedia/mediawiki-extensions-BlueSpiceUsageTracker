@@ -59,10 +59,12 @@
 	"ExtensionMessagesFiles": {
 		"BlueSpiceUsageTrackerAlias": "languages/SpecialUsageTracker.alias.php"
 	},
-	"AutoloadNamespaces": {
+	"TestAutoloadNamespaces": {
 		"BS\\UsageTracker\\Tests\\": "tests/phpunit/",
+		"BlueSpice\\UsageTracker\\Tests\\": "tests/phpunit/"
+	},
+	"AutoloadNamespaces": {
 		"BS\\UsageTracker\\": "src/",
-		"BlueSpice\\UsageTracker\\Tests\\": "tests/phpunit/",
 		"BlueSpice\\UsageTracker\\": "src/"
 	},
 	"AutoloadClasses": {
