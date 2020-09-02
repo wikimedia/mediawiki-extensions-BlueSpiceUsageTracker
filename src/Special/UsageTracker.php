@@ -45,7 +45,8 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 		);
 		if ( $isAllowed ) {
 			if ( $oRequest->wasPosted() ) {
-				$aData = \BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData();
+				$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
+				$aData = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageData();
 				// JobQueue...getSize is not updated fast enough, so we use the
 				// raw count of jobs just enqueued.
 				$this->iOpenTasks = count( $aData );
