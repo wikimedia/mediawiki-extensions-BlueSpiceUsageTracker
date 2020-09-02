@@ -6,6 +6,8 @@
  */
 namespace BS\UsageTracker\Jobs;
 
+use MediaWiki\MediaWikiServices;
+
 class UsageTrackerCollectJob extends \Job {
 
 	/**
@@ -28,7 +30,8 @@ class UsageTrackerCollectJob extends \Job {
 	 * @return true
 	 */
 	public function run() {
-		\BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData( $this->config );
+		$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
+		$em->getExtension( 'BlueSpiceUsageTracker' )->getUsageData( $this->config );
 		return true;
 	}
 

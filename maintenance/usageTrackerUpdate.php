@@ -16,6 +16,8 @@ $IP = realpath( dirname( dirname( __DIR__ ) ) );
 
 require_once $IP . '/BlueSpiceFoundation/maintenance/BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class UsageTrackerUpdate extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
@@ -23,7 +25,8 @@ class UsageTrackerUpdate extends BSMaintenance {
 	}
 
 	public function execute() {
-		$aData = BsExtensionManager::getExtension( 'UsageTracker' )->getUsageData();
+		$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
+		$aData = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageData();
 	}
 
 	public function finalSetup() {
