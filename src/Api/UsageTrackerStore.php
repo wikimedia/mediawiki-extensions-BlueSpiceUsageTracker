@@ -1,6 +1,8 @@
 <?php
 namespace BS\UsageTracker\Api;
 
+use MediaWiki\MediaWikiServices;
+
 class UsageTrackerStore extends \BSApiExtJSStoreBase {
 
 	/**
@@ -9,7 +11,7 @@ class UsageTrackerStore extends \BSApiExtJSStoreBase {
 	 */
 	protected function makeData( $sQuery = '' ) {
 		$aData = [];
-		$extension = \BlueSpice\Services::getInstance()
+		$extension = MediaWikiServices::getInstance()
 			->getService( 'BSExtensionFactory' )
 			->getExtension( 'BlueSpiceUsageTracker' );
 		$aRes = $extension->getUsageDataFromDB();
