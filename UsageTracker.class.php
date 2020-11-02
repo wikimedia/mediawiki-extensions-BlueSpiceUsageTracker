@@ -31,6 +31,8 @@
  * @filesource
  */
 
+use MediaWiki\MediaWikiServices;
+
 class UsageTracker extends BsExtensionMW {
 
 	/**
@@ -129,7 +131,12 @@ class UsageTracker extends BsExtensionMW {
 	protected function initializeCollectors( $aConfig = null ) {
 		if ( $aConfig === null ) {
 			// Get all the collectors definitions
-			Hooks::run( 'BSUsageTrackerRegisterCollectors', [ &$this->aCollectorsConfig ] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSUsageTrackerRegisterCollectors',
+				[
+					&$this->aCollectorsConfig
+				]
+			);
 		} else {
 			$this->aCollectorsConfig = [];
 			$this->aCollectorsConfig[] = $aConfig;
