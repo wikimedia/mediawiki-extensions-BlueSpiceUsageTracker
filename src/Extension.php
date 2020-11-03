@@ -30,10 +30,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
+namespace BS\UsageTracker;
 
+use BlueSpice\Extension as BaseExtension;
 use MediaWiki\MediaWikiServices;
 
-class UsageTracker extends BsExtensionMW {
+class Extension extends BaseExtension {
 
 	/**
 	 * Contains the configuration for collectors
@@ -117,7 +119,7 @@ class UsageTracker extends BsExtensionMW {
 		);
 		$aData = [];
 		foreach ( $res as $oRow ) {
-			$aData[] = BS\UsageTracker\CollectorResult::newFromDBRow( $oRow );
+			$aData[] = \BS\UsageTracker\CollectorResult::newFromDBRow( $oRow );
 		}
 		return $aData;
 	}
@@ -151,7 +153,7 @@ class UsageTracker extends BsExtensionMW {
 			}
 			if ( class_exists( $classname ) ) {
 				$oCollector = new $classname( $aCollectorConfig['config'] );
-				if ( $oCollector instanceof BS\UsageTracker\Collectors\Base ) {
+				if ( $oCollector instanceof \BS\UsageTracker\Collectors\Base ) {
 					$this->aCollectors[] = new $classname( $aCollectorConfig );
 				} else {
 					wfDebugLog( "BSUsageTracker", "Class $classname must be inherited from Base" );
