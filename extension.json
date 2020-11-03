@@ -19,7 +19,7 @@
 		"BlueSpiceFoundation": {
 			"Extensions": {
 				"BlueSpiceUsageTracker": {
-					"className": "UsageTracker",
+					"className": "\\BS\\UsageTracker\\Extension",
 					"extPath": "/BlueSpiceUsageTracker"
 				}
 			},
@@ -66,9 +66,6 @@
 	"AutoloadNamespaces": {
 		"BS\\UsageTracker\\": "src/",
 		"BlueSpice\\UsageTracker\\": "src/"
-	},
-	"AutoloadClasses": {
-		"UsageTracker": "UsageTracker.class.php"
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": "BS\\UsageTracker\\Hook\\LoadExtensionSchemaUpdates\\AddUsageTrackerTable::callback"
