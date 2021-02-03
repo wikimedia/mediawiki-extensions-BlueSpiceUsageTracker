@@ -31,7 +31,6 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 	/**
 	 * Renders special page output.
 	 * @param string $sParameter Not used.
-	 * @return bool Allow other hooked methods to be executed. Always true.
 	 */
 	public function execute( $sParameter ) {
 		parent::execute( $sParameter );
