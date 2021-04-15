@@ -3,10 +3,11 @@
 		"authors": [
 			"Gomoko",
 			"Thibaut120094",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
-	"bs-usagetracker-desc": "Possède des données statistiques sur l’utilisation des extensions",
+	"bs-usagetracker-desc": "Maintient des données statistiques sur l’utilisation des extensions",
 	"prefs-usagetracker": "Suivi d’utilisation",
 	"usagetracker": "Suivi d’utilisation",
 	"bs-usagetracker-startjobs": "Mettre à jour maintenant",
