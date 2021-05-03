@@ -74,7 +74,7 @@ class Extension extends BaseExtension {
 		}
 
 		// Store collected data in DB for future access
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		foreach ( $aData as $oData ) {
 			// Each usage number is only stored once. So delete any old values first.
 			$dbw->delete(
