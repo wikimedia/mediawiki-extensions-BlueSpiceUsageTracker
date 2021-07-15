@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"bs-usagetracker-desc": "Bevat statistische gegevens over het gebrui van uitbreidinging",
 	"bs-usagetracker-startjobs": "Nu bijwerken",
 	"bs-usagetracker-create-statistics": "Gebruiksstatistieken bijwerken",
+	"bs-usagetracker-col-identifier": "Identificatiecode",
 	"bs-usagetracker-col-desc": "Beschrijving",
 	"bs-usagetracker-col-count": "Aantal",
 	"bs-usagetracker-col-last-updated": "Laatst bijgewerkt",
