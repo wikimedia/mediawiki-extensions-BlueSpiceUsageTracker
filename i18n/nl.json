@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"bs-usagetracker-desc": "Bevat statistische gegevens over het gebrui van uitbreidinging",
@@ -13,5 +14,6 @@
 	"bs-usagetracker-base-collector-desc": "Aantal pagina's dat $1 gebruikt",
 	"bs-usagetracker-tag-collector-desc": "Aantal pagina's met de tag <$1>",
 	"bs-usagetracker-db-collector-desc": "Aantal $1",
-	"bs-usagetracker-open-tasks": "Website analyse is momenteel bezig. {{PLURAL:$1|Één analyse is|$1 analyses zijn}} nog steeds bezig. <a href=\"$2\">(Vernieuwen)</a>"
+	"bs-usagetracker-open-tasks": "Website analyse is momenteel bezig. {{PLURAL:$1|Één analyse is|$1 analyses zijn}} nog steeds bezig. <a href=\"$2\">(Vernieuwen)</a>",
+	"bs-usagetracker-col-identifier": "Identificatiecode"
 }
