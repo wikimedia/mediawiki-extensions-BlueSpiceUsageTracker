@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Stefano"
 		]
 	},
 	"bs-usagetracker-desc": "Contiene dati statistici sull'uso dell'estensione",
@@ -9,6 +10,7 @@
 	"bs-usagetracker-create-statistics": "Aggiornare le statistiche di utilizzo",
 	"bs-usagetracker-col-identifier": "Identificatore",
 	"bs-usagetracker-col-desc": "Descrizione",
+	"bs-usagetracker-col-count": "Conteggio",
 	"bs-usagetracker-col-last-updated": "Ultimo aggiornamento",
 	"bs-usagetracker-base-collector-desc": "Numero di pagine che utilizzano $1",
 	"bs-usagetracker-tag-collector-desc": "Numero di pagine che utilizzano l'etichetta <$1>",
