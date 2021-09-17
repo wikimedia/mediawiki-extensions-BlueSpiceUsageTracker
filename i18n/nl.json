@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
+			"McDutchie",
 			"Romaine"
 		]
 	},
@@ -12,7 +13,7 @@
 	"bs-usagetracker-col-desc": "Beschrijving",
 	"bs-usagetracker-col-count": "Aantal",
 	"bs-usagetracker-col-last-updated": "Laatst bijgewerkt",
-	"bs-usagetracker-base-collector-desc": "Aantal pagina's dat $1 gebruikt",
+	"bs-usagetracker-base-collector-desc": "Aantal pagina's die $1 gebruiken",
 	"bs-usagetracker-tag-collector-desc": "Aantal pagina's met de tag <$1>",
 	"bs-usagetracker-db-collector-desc": "Aantal $1",
 	"bs-usagetracker-open-tasks": "Website analyse is momenteel bezig. {{PLURAL:$1|Één analyse is|$1 analyses zijn}} nog steeds bezig. <a href=\"$2\">(Vernieuwen)</a>"
