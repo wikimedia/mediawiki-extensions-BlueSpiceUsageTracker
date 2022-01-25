@@ -10,7 +10,7 @@
 		"UsageTracker": "\\BS\\UsageTracker\\Special\\UsageTracker"
 	},
 	"requires": {
-		"MediaWiki": ">= 1.36.0",
+		"MediaWiki": ">= 1.37.0",
 		"extensions": {
 			"BlueSpiceFoundation": ">= 4.1"
 		}
