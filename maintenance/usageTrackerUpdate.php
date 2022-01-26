@@ -17,6 +17,7 @@ $IP = realpath( dirname( dirname( __DIR__ ) ) );
 require_once $IP . '/BlueSpiceFoundation/maintenance/BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Settings\SettingsBuilder;
 
 class UsageTrackerUpdate extends BSMaintenance {
 	public function __construct() {
@@ -29,8 +30,12 @@ class UsageTrackerUpdate extends BSMaintenance {
 		$aData = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageData();
 	}
 
-	public function finalSetup() {
-		parent::finalSetup();
+	/**
+	 * @inheritDoc
+	 */
+	public function finalSetup( SettingsBuilder $settingsBuilder = null ) {
+		// @phan-suppress-next-line PhanParamTooMany temporary, see gerrit 757469
+		parent::finalSetup( $settingsBuilder );
 		$GLOBALS['wgMainCacheType'] = CACHE_NONE;
 	}
 }
