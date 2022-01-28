@@ -50,7 +50,7 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 				// raw count of jobs just enqueued.
 				$this->iOpenTasks = count( $aData );
 			} else {
-				$oJobQueue = \JobQueueGroup::singleton()->get( 'usageTrackerCollectJob' );
+				$oJobQueue = MediaWikiServices::getInstance()->getJobQueueGroup()->get( 'usageTrackerCollectJob' );
 				$oJobQueue->flushCaches();
 				// This count is wrong, since some jobs are executed right at the
 				// end of this page load. However, since we do not know the number

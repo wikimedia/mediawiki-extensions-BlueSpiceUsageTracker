@@ -2,6 +2,7 @@
 namespace BS\UsageTracker\Collectors;
 
 use BS\UsageTracker\Jobs\UsageTrackerCollectJob;
+use MediaWiki\MediaWikiServices;
 
 abstract class Base {
 	protected $identifier = 'bs:';
@@ -57,7 +58,7 @@ abstract class Base {
 			\Title::newFromText( $this->identifier . wfTimestampNow() ),
 			$this->config
 		);
-		\JobQueueGroup::singleton()->push( $oJob );
+		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $oJob );
 		return true;
 	}
 }
