@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"FarsiNevis"
+			"FarsiNevis",
+			"Beginneruser"
 		]
 	},
 	"bs-usagetracker-desc": "داده‌های آماری در بارهٔ استفاده از افزونه را نگهداری می‌کند",
 	"bs-usagetracker-startjobs": "روزآمد کنید",
 	"bs-usagetracker-create-statistics": "روزآمدسازی آمار استفاده",
 	"bs-usagetracker-col-identifier": "شناسانه",
-	"bs-usagetracker-col-desc": "توصیف",
+	"bs-usagetracker-col-desc": "توضیحات",
 	"bs-usagetracker-col-count": "شمار",
 	"bs-usagetracker-col-last-updated": "آخرین روزآمدسازی",
 	"bs-usagetracker-base-collector-desc": "شمار صفحه‌هایی که از $1 استفاده می‌کنند",
