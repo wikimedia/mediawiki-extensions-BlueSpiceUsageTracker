@@ -73,11 +73,22 @@ class ShowInstanceStats extends Maintenance {
 		}
 		$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		$usagetrackerdata = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageDataFromDB();
+		$bsextensioninfo = MediaWikiServices::getInstance()
+			->getConfigFactory()
+			->makeConfig( 'bsg' )
+			->get( 'BlueSpiceExtInfo' );
+		$mwversionobj = new MediaWikiVersionFetcher;
+		$mwversion = $mwversionobj->fetchVersion();
 		$usagetracker = [];
 		foreach ( $usagetrackerdata as $data ) {
 			array_push( $usagetracker, [ $data->identifier => $data->count ] );
 		}
 		$instanceStats = [
+			"instance" => sha1( WikiMap::getCurrentWikiId() ),
+			"timestamp" => date( DATE_ISO8601 ),
+			"bluespice-version" => $bsextensioninfo['version'],
+			"bluespice-edition" => $bsextensioninfo['package'],
+			"mediawiki-version" => $mwversion,
 			"sitestats" => call_user_func_array( 'array_merge', $sitestats ),
 			"usagetracker" => call_user_func_array( 'array_merge', $usagetracker )
 		];
