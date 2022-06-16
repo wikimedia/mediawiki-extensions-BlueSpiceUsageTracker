@@ -40,5 +40,5 @@ class UsageTrackerUpdate extends BSMaintenance {
 	}
 }
 
-$maintClass = 'UsageTrackerUpdate';
+$maintClass = UsageTrackerUpdate::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
