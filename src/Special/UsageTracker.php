@@ -61,7 +61,7 @@ class UsageTracker extends \BlueSpice\SpecialPage {
 			$this->showUpdateForm();
 		}
 
-		$this->getOutput()->addModules( 'ext.UsageTracker.manager' );
+		$this->getOutput()->addModules( [ 'ext.UsageTracker.manager' ] );
 		$this->getOutput()->addHTML( \Html::element( 'div', [
 			'id' => 'bs-usagetracker-manager'
 		] ) );
