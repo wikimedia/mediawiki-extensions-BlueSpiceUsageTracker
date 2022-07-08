@@ -71,7 +71,8 @@
 		"LoadExtensionSchemaUpdates": "BS\\UsageTracker\\Hook\\LoadExtensionSchemaUpdates\\AddUsageTrackerTable::callback",
 		"BSUsageTrackerRegisterCollectors": [
 			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfCategories::callback",
-			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfUsersPerGroup::callback"
+			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfUsersPerGroup::callback",
+			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfPagesByPageProperty::callback"
 		]
 	},
 	"JobClasses": {
