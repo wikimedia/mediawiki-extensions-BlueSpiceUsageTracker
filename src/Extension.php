@@ -62,12 +62,12 @@ class Extension extends BaseExtension {
 
 		// If there is no specific collector, register all known collectors and
 		// add them to job queue for deferred collecting
-		if ( $aConfig === null ) {
-			foreach ( $this->aCollectors as $oCollector ) {
-				$oCollector->registerJob();
-			}
-			return $this->aCollectors;
-		}
+		// if ( $aConfig === null ) {
+		// 	foreach ( $this->aCollectors as $oCollector ) {
+		// 		$oCollector->registerJob();
+		// 	}
+		// 	return $this->aCollectors;
+		// }
 
 		foreach ( $this->aCollectors as $oCollector ) {
 			$aData[] = $oCollector->getUsageData( $aConfig );
@@ -172,6 +172,8 @@ class Extension extends BaseExtension {
 		foreach ( $this->aCollectorsConfig as $aCollectorConfig ) {
 			if ( strpos( $aCollectorConfig['class'], "\\" ) === false ) {
 				$classname = "BS\\UsageTracker\\Collectors\\" . $aCollectorConfig['class'];
+			} else {
+				$classname = $aCollectorConfig['class'];
 			}
 			if ( class_exists( $classname ) ) {
 				$oCollector = new $classname( $aCollectorConfig['config'] );

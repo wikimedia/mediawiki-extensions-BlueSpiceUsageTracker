@@ -68,7 +68,8 @@
 		"BlueSpice\\UsageTracker\\": "src/"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "BS\\UsageTracker\\Hook\\LoadExtensionSchemaUpdates\\AddUsageTrackerTable::callback"
+		"LoadExtensionSchemaUpdates": "BS\\UsageTracker\\Hook\\LoadExtensionSchemaUpdates\\AddUsageTrackerTable::callback",
+		"BSUsageTrackerRegisterCollectors": "BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfCategories::callback"
 	},
 	"JobClasses": {
 		"usageTrackerCollectJob": "BS\\UsageTracker\\Jobs\\UsageTrackerCollectJob"
