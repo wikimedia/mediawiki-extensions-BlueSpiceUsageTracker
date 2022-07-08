@@ -62,12 +62,12 @@ class Extension extends BaseExtension {
 
 		// If there is no specific collector, register all known collectors and
 		// add them to job queue for deferred collecting
-		if ( $aConfig === null ) {
-			foreach ( $this->aCollectors as $oCollector ) {
-				$oCollector->registerJob();
-			}
-			return $this->aCollectors;
-		}
+		// if ( $aConfig === null ) {
+		// 	foreach ( $this->aCollectors as $oCollector ) {
+		// 		$oCollector->registerJob();
+		// 	}
+		// 	return $this->aCollectors;
+		// }
 
 		foreach ( $this->aCollectors as $oCollector ) {
 			$aData[] = $oCollector->getUsageData( $aConfig );
@@ -76,22 +76,44 @@ class Extension extends BaseExtension {
 		// Store collected data in DB for future access
 		$dbw = wfGetDB( DB_MASTER );
 		foreach ( $aData as $oData ) {
-			// Each usage number is only stored once. So delete any old values first.
-			$dbw->delete(
-				'bs_usagetracker',
-				[ 'ut_identifier' => $oData->identifier ]
-			);
-			// Update the count
-			$dbw->insert(
-				'bs_usagetracker',
-				[
-					'ut_identifier' => $oData->identifier,
-					'ut_count' => $oData->count,
-					'ut_type' => $oData->type,
-					'ut_timestamp' => wfTimestampNow()
-				],
-				__METHOD__
-			);
+			if ( is_array( $oData ) ) {
+				foreach ( $oData as $cData ) {
+					$dbw->delete(
+						'bs_usagetracker',
+						[ 'ut_identifier' => $cData['identifier'] ]
+					);
+					// Update the count
+					$dbw->insert(
+						'bs_usagetracker',
+						[
+							'ut_identifier' => $cData['identifier'],
+							'ut_count' => $cData['count'],
+							'ut_type' => $cData['type'],
+							'ut_timestamp' => wfTimestampNow()
+						],
+						__METHOD__
+					);
+				}
+
+			} else {
+				// Each usage number is only stored once. So delete any old values first.
+				$dbw->delete(
+					'bs_usagetracker',
+					[ 'ut_identifier' => $oData->identifier ]
+				);
+				// Update the count
+				$dbw->insert(
+					'bs_usagetracker',
+					[
+						'ut_identifier' => $oData->identifier,
+						'ut_count' => $oData->count,
+						'ut_type' => $oData->type,
+						'ut_timestamp' => wfTimestampNow()
+					],
+					__METHOD__
+				);
+			}
+
 		}
 
 		return $aData;
@@ -150,6 +172,8 @@ class Extension extends BaseExtension {
 		foreach ( $this->aCollectorsConfig as $aCollectorConfig ) {
 			if ( strpos( $aCollectorConfig['class'], "\\" ) === false ) {
 				$classname = "BS\\UsageTracker\\Collectors\\" . $aCollectorConfig['class'];
+			} else {
+				$classname = $aCollectorConfig['class'];
 			}
 			if ( class_exists( $classname ) ) {
 				$oCollector = new $classname( $aCollectorConfig['config'] );
