@@ -80,8 +80,16 @@ class ShowInstanceStats extends Maintenance {
 		$mwversionobj = new MediaWikiVersionFetcher;
 		$mwversion = $mwversionobj->fetchVersion();
 		$usagetracker = [];
+
 		foreach ( $usagetrackerdata as $data ) {
-			array_push( $usagetracker, [ $data->identifier => $data->count ] );
+
+			if ( is_array( $data ) ) {
+				foreach ( $data as $dataval ) {
+					array_push( $usagetracker, [ $dataval['identifier'] => $dataval['count'] ] );
+				}
+			} else {
+				array_push( $usagetracker, [ $data->identifier => $data->count ] );
+			}
 		}
 		$instanceStats = [
 			"instance" => sha1( WikiMap::getCurrentWikiId() ),
