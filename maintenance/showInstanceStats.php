@@ -74,8 +74,16 @@ class ShowInstanceStats extends Maintenance {
 		$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		$usagetrackerdata = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageDataFromDB();
 		$usagetracker = [];
+
 		foreach ( $usagetrackerdata as $data ) {
-			array_push( $usagetracker, [ $data->identifier => $data->count ] );
+
+			if ( is_array( $data ) ) {
+				foreach ( $data as $dataval ) {
+					array_push( $usagetracker, [ $dataval['identifier'] => $dataval['count'] ] );
+				}
+			} else {
+				array_push( $usagetracker, [ $data->identifier => $data->count ] );
+			}
 		}
 		$instanceStats = [
 			"sitestats" => call_user_func_array( 'array_merge', $sitestats ),
