@@ -22,7 +22,7 @@ use MediaWiki\Settings\SettingsBuilder;
 class UsageTrackerUpdate extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->requireExtension( 'UsageTracker' );
+		$this->requireExtension( 'BlueSpiceUsageTracker' );
 	}
 
 	public function execute() {
