@@ -4,5 +4,6 @@
 			"Eleassar"
 		]
 	},
-	"bs-usagetracker-col-desc": "Opis"
+	"bs-usagetracker-col-desc": "Opis",
+	"bs-usagetracker-col-identifier": "Identifikator"
 }
