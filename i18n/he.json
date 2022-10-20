@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Guycn2"
+			"Guycn2",
+			"Amire80"
 		]
 	},
-	"bs-usagetracker-desc": "אספקת נתונים סטטיסטיים על שימוש בהרחבות",
+	"bs-usagetracker-desc": "אחזקת נתונים סטטיסטיים על שימוש בהרחבות",
 	"prefs-usagetracker": "מעקב אחר שימוש",
 	"usagetracker": "מעקב אחר שימוש",
 	"bs-usagetracker-startjobs": "לעדכן עכשיו",
@@ -18,5 +19,7 @@
 	"bs-usagetracker-tag-collector-desc": "מספר הדפים שמשתמשים בתג <$1>",
 	"bs-usagetracker-db-collector-desc": "מספר ה־$1",
 	"bs-usagetracker-open-tasks": "ניתוח האתר מתבצע כרגע. {{PLURAL:$1|ניתוח אחד עדיין פתוח|$1 ניתוחים עדיין פתוחים}}. <a href='$2'>(רענון)</a>",
-	"apihelp-bs-usagetracker-store-summary": "אספקת נתונים סטטיסטיים על שימוש בהרחבות"
+	"apihelp-bs-usagetracker-store-summary": "אספקת נתונים סטטיסטיים על שימוש בהרחבות",
+	"action-usagetracker-update": "להפעיל מחדש את תהליך העדכון שאוסף את כל הנתונים שבמעקב בדף המיוחד [[Special:UsageTracker]]",
+	"right-usagetracker-update": "גישה להפעלה מחדש של תהליך העדכון שאוסף את כל הנתונים שבמעקב בדף המיוחד [[Special:UsageTracker]]"
 }
