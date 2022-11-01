@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abbas dhothar"
+			"Abbas dhothar",
+			"Bgo eiu"
 		]
 	},
-	"bs-usagetracker-col-desc": "تفصیل"
+	"bs-usagetracker-col-desc": "تفصیل",
+	"bs-usagetracker-col-identifier": "شناختی"
 }
