@@ -52,7 +52,8 @@ class CollectorResult {
 	 */
 	public static function newFromDBRow( $oRow ) {
 		$oResult = new self();
-		$oCollector = new $oRow->ut_type();
+		$collectorClass = $oRow->ut_type;
+		$oCollector = new $collectorClass();
 		$oResult->descriptionKey = $oCollector->getDescriptionKey();
 		$oResult->identifier = $oRow->ut_identifier;
 		$oResult->type = $oRow->ut_type;
