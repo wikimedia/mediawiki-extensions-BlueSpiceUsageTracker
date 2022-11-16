@@ -10,7 +10,7 @@ abstract class Base {
 
 	/**
 	 * Initial configuration. Needed to register as job
-	 * @var type
+	 * @var array
 	 */
 	protected $config = [];
 
@@ -18,7 +18,7 @@ abstract class Base {
 	 *
 	 * @param array $config
 	 */
-	public function __construct( $config ) {
+	public function __construct( $config = [] ) {
 		if ( isset( $config['config'] ) && is_array( $config['config'] ) ) {
 			if ( isset( $config['config']['identifier'] ) ) {
 				$this->identifier = $config['config']['identifier'];
