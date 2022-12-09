@@ -71,6 +71,9 @@ class ShowInstanceStats extends Maintenance {
 			array_push( $sitestats, [ $desc => $stats->$field ]
 			);
 		}
+		$numberOfEnabledUsers = $this->getNumberOfEnabledUsers();
+		array_push( $sitestats, [ "Enabled users" => $numberOfEnabledUsers ] );
+
 		$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		$usagetrackerdata = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageDataFromDB();
 		$bsextensioninfo = MediaWikiServices::getInstance()
@@ -101,6 +104,52 @@ class ShowInstanceStats extends Maintenance {
 			"usagetracker" => call_user_func_array( 'array_merge', $usagetracker )
 		];
 		$this->output( json_encode( $instanceStats, JSON_PRETTY_PRINT ) );
+	}
+
+	/**
+	 * Give the number of active Users back, subtract the number of getDeactivatedUserNumber from getUserNuḿber.
+	 *
+	 * @return int
+	 */
+	public function getNumberOfEnabledUsers() {
+		$res1 = $this->getUserNumber();
+		$res2 = $this->getDeactivatedUserNumber();
+		$sum = $res1 - $res2;
+
+		return $sum;
+	}
+
+	/**
+	 * Count the list of Users.
+	 *
+	 * @return int
+	 */
+	public function getUserNumber() {
+			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
+			$dbr = $lb->getConnectionRef( DB_REPLICA );
+			$res = $dbr->newSelectQueryBuilder()
+							->select( 'user.user_id' )
+							->from( 'user' )
+							->caller( __METHOD__ )
+							->fetchRowCount();
+			return $res;
+	}
+
+	/**
+	 * Count all Users on the Blocklist witch attribute ipb.sitewide is 1 (deactivated Users or blocked).
+	 *
+	 * @return int
+	 */
+	public function getDeactivatedUserNumber() {
+			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
+			$dbr = $lb->getConnectionRef( DB_REPLICA );
+			$res = $dbr->newSelectQueryBuilder()
+							->select( 'ipblocks.ipb_user' )
+							->from( 'ipblocks' )
+							->where( 'ipblocks.ipb_sitewide IS NOT NULL' )
+							->caller( __METHOD__ )
+							->fetchRowCount();
+			return $res;
 	}
 }
 
