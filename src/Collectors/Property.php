@@ -16,7 +16,7 @@ class Property extends Base {
 	 * @return \BS\UsageTracker\CollectorResult
 	 */
 	public function getUsageData() {
-		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			[ 'page_props' ],
 			[ 'pp_propname' ],
