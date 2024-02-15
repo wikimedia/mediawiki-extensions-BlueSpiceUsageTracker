@@ -12,7 +12,7 @@ class CollectorResult {
 	 *
 	 * @var string
 	 */
-	public $descriptionKey = '';
+	public $description = '';
 
 	/**
 	 *
@@ -38,7 +38,7 @@ class CollectorResult {
 	 */
 	public function __construct( $oCollector = null ) {
 		if ( is_object( $oCollector ) && ( $oCollector instanceof Collectors\Base ) ) {
-			$this->descriptionKey = $oCollector->getDescriptionKey();
+			$this->description = $oCollector->getDescription();
 			$this->identifier = $oCollector->getIdentifier();
 			$this->updateDate = wfTimestamp();
 			$this->type = get_class( $oCollector );
@@ -54,7 +54,7 @@ class CollectorResult {
 		$oResult = new self();
 		$collectorClass = $oRow->ut_type;
 		$oCollector = new $collectorClass();
-		$oResult->descriptionKey = $oCollector->getDescriptionKey();
+		$oResult->description = $oCollector->getDescription();
 		$oResult->identifier = $oRow->ut_identifier;
 		$oResult->type = $oRow->ut_type;
 		$oResult->updateDate = $oRow->ut_timestamp;
@@ -76,11 +76,6 @@ class CollectorResult {
 	 * @return string
 	 */
 	public function getDescription() {
-		return wfMessage(
-			$this->descriptionKey,
-			wfMessage( $this->identifier )->exists()
-				? wfMessage( $this->identifier )->text()
-				: $this->identifier
-			)->text();
+		return $this->description;
 	}
 }
