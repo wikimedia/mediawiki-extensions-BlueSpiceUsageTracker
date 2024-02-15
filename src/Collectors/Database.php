@@ -11,7 +11,7 @@ class Database extends Base {
 	protected $data;
 	protected $multipledata;
 	protected $column;
-	protected $descKey = '';
+	protected $description = 'bs-usagetracker-db-collector-desc';
 
 	/**
 	 *
@@ -61,7 +61,7 @@ class Database extends Base {
 			throw new \MWException( "UsageTracker::DatabaseCollector: table or columns are not set." );
 		}
 
-		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			[ $this->table ],
 			$this->uniqueColumns,

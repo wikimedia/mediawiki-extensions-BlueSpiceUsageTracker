@@ -8,11 +8,11 @@ use BS\UsageTracker\Hook\BSUsageTrackerRegisterCollectors;
 class NoOfPageContentModels extends BSUsageTrackerRegisterCollectors {
 
 	protected function doProcess() {
-		$this->collectorConfig['bs:contentmodels'] = [
+		$this->collectorConfig['contentmodels'] = [
 			'class' => Database::class,
 			'config' => [
 				'identifier' => 'no-of-page_content_models',
-				'descKey' => 'no-of-page_content_models',
+				'internalDesc' => 'Number of page content models',
 				'table' => 'page',
 				'uniqueColumns' => [ '*' ],
 				'multipledata' => true,
