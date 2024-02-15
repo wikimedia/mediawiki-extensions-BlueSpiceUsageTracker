@@ -6,9 +6,10 @@
  */
 namespace BS\UsageTracker\Jobs;
 
+use Job;
 use MediaWiki\MediaWikiServices;
 
-class UsageTrackerCollectJob extends \Job {
+class UsageTrackerCollectJob extends Job {
 
 	/**
 	 * Configuration of the job
@@ -17,11 +18,10 @@ class UsageTrackerCollectJob extends \Job {
 	protected $config = [];
 
 	/**
-	 * @param Title $title
 	 * @param array $params definition array for specific collector
 	 */
-	public function __construct( $title, $params ) {
-		parent::__construct( 'usageTrackerCollectJob', $title, $params );
+	public function __construct( $params ) {
+		parent::__construct( 'usageTrackerCollectJob', $params );
 		$this->config = $params;
 	}
 

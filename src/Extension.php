@@ -33,6 +33,9 @@
 namespace BS\UsageTracker;
 
 use BlueSpice\Extension as BaseExtension;
+use Config;
+use IContextSource;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 class Extension extends BaseExtension {
 
@@ -47,6 +50,17 @@ class Extension extends BaseExtension {
 	 * @var array Object array of BS\\UsageTracker\\Collectors\\Base
 	 */
 	protected $aCollectors = [];
+
+	/** @var ILoadBalancer */
+	protected $loadBalancer;
+
+	/**
+	 * @inheritDoc
+	 */
+	public function __construct( array $definition, IContextSource $context, Config $config ) {
+		parent::__construct( $definition, $context, $config );
+		$this->loadBalancer = $this->services->getDBLoadBalancer();
+	}
 
 	/**
 	 * Collects usage data from one or several collectors. If $aConfig is not set
@@ -73,7 +87,7 @@ class Extension extends BaseExtension {
 		}
 
 		// Store collected data in DB for future access
-		$dbw = $this->services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		foreach ( $aData as $oData ) {
 			if ( is_array( $oData ) ) {
 				foreach ( $oData as $cData ) {
@@ -125,7 +139,7 @@ class Extension extends BaseExtension {
 	 * @return BS\UsageTracker\CollectorResult[]
 	 */
 	public function getUsageDataFromDB( $aConfig = null ) {
-		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'bs_usagetracker',
 			[

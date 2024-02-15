@@ -23,7 +23,7 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 			'count' => [
 				'type' => 'string'
 			],
-			'descriptionKey' => [
+			'description' => [
 				'type' => 'string'
 			],
 			'identifier' => [

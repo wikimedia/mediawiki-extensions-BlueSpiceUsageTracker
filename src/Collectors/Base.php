@@ -2,11 +2,14 @@
 namespace BS\UsageTracker\Collectors;
 
 use BS\UsageTracker\Jobs\UsageTrackerCollectJob;
+use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 abstract class Base {
-	protected $identifier = 'bs:';
-	protected $descKey = '';
+
+	protected $identifier = '';
+	protected $description = 'bs-usagetracker-base-collector-desc';
 
 	/**
 	 * Initial configuration. Needed to register as job
@@ -17,6 +20,12 @@ abstract class Base {
 	/** @var MediaWikiServices */
 	protected $services;
 
+	/** @var JobQueueGroup */
+	protected $jobQueueGroup;
+
+	/** @var ILoadBalancer */
+	protected $loadBalancer;
+
 	/**
 	 *
 	 * @param array $config
@@ -26,17 +35,22 @@ abstract class Base {
 			if ( isset( $config['config']['identifier'] ) ) {
 				$this->identifier = $config['config']['identifier'];
 			}
+			if ( isset( $config['config']['internalDesc'] ) ) {
+				$this->description = $config['config']['internalDesc'];
+			}
 		}
 		$this->config = $config;
 		$this->services = MediaWikiServices::getInstance();
+		$this->jobQueueGroup = $this->services->getJobQueueGroup();
+		$this->loadBalancer = $this->services->getDBLoadBalancer();
 	}
 
 	/**
 	 *
 	 * @return string
 	 */
-	public function getDescriptionKey() {
-		return $this->descKey;
+	public function getDescription() {
+		return $this->description;
 	}
 
 	/**
@@ -58,11 +72,8 @@ abstract class Base {
 	 * @return bool
 	 */
 	public function registerJob() {
-		$oJob = new UsageTrackerCollectJob(
-			\Title::newFromText( $this->identifier . wfTimestampNow() ),
-			$this->config
-		);
-		$this->services->getJobQueueGroup()->push( $oJob );
+		$job = new UsageTrackerCollectJob( $this->config );
+		$this->jobQueueGroup->push( $job );
 		return true;
 	}
 }
