@@ -11,7 +11,7 @@ class Database extends Base {
 	protected $data;
 	protected $multipledata;
 	protected $column;
-	protected $descKey = 'bs-usagetracker-db-collector-desc';
+	protected $descKey = '';
 
 	/**
 	 *
