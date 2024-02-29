@@ -6,7 +6,7 @@ use MediaWiki\MediaWikiServices;
 
 abstract class Base {
 	protected $identifier = 'bs:';
-	protected $descKey = 'bs-usagetracker-base-collector-desc';
+	protected $descKey = '';
 
 	/**
 	 * Initial configuration. Needed to register as job

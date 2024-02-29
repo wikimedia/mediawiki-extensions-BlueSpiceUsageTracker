@@ -7,7 +7,7 @@ class Tag extends Base {
 	 *
 	 * @var string
 	 */
-	protected $descKey = 'bs-usagetracker-tag-collector-desc';
+	protected $descKey = '';
 
 	/**
 	 *
