@@ -128,7 +128,7 @@ class ShowInstanceStats extends Maintenance {
 			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 			$dbr = $lb->getConnectionRef( DB_REPLICA );
 			$res = $dbr->newSelectQueryBuilder()
-							->select( 'user.user_id' )
+							->select( 'user_id' )
 							->from( 'user' )
 							->caller( __METHOD__ )
 							->fetchRowCount();
@@ -144,9 +144,9 @@ class ShowInstanceStats extends Maintenance {
 			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 			$dbr = $lb->getConnectionRef( DB_REPLICA );
 			$res = $dbr->newSelectQueryBuilder()
-							->select( 'ipblocks.ipb_user' )
+							->select( 'ipb_user' )
 							->from( 'ipblocks' )
-							->where( 'ipblocks.ipb_sitewide IS NOT NULL' )
+							->where( 'ipb_sitewide IS NOT NULL' )
 							->caller( __METHOD__ )
 							->fetchRowCount();
 			return $res;
