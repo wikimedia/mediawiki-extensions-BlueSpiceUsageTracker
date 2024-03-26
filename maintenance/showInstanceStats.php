@@ -125,14 +125,13 @@ class ShowInstanceStats extends Maintenance {
 	 * @return int
 	 */
 	public function getUserNumber() {
-			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-			$dbr = $lb->getConnectionRef( DB_REPLICA );
-			$res = $dbr->newSelectQueryBuilder()
-							->select( 'user_id' )
-							->from( 'user' )
-							->caller( __METHOD__ )
-							->fetchRowCount();
-			return $res;
+		$dbr = $this->getDB( DB_REPLICA );
+		$res = $dbr->newSelectQueryBuilder()
+					->select( 'user_id' )
+					->from( 'user' )
+					->caller( __METHOD__ )
+					->fetchRowCount();
+		return $res;
 	}
 
 	/**
@@ -141,15 +140,14 @@ class ShowInstanceStats extends Maintenance {
 	 * @return int
 	 */
 	public function getDeactivatedUserNumber() {
-			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-			$dbr = $lb->getConnectionRef( DB_REPLICA );
-			$res = $dbr->newSelectQueryBuilder()
-							->select( 'ipb_user' )
-							->from( 'ipblocks' )
-							->where( 'ipb_sitewide IS NOT NULL' )
-							->caller( __METHOD__ )
-							->fetchRowCount();
-			return $res;
+		$dbr = $this->getDB( DB_REPLICA );
+		$res = $dbr->newSelectQueryBuilder()
+					->select( 'ipb_user' )
+					->from( 'ipblocks' )
+					->where( 'ipb_sitewide IS NOT NULL' )
+					->caller( __METHOD__ )
+					->fetchRowCount();
+		return $res;
 	}
 }
 
