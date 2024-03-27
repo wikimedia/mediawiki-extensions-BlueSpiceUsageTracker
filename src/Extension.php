@@ -33,7 +33,6 @@
 namespace BS\UsageTracker;
 
 use BlueSpice\Extension as BaseExtension;
-use MediaWiki\MediaWikiServices;
 
 class Extension extends BaseExtension {
 
@@ -74,7 +73,7 @@ class Extension extends BaseExtension {
 		}
 
 		// Store collected data in DB for future access
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		foreach ( $aData as $oData ) {
 			if ( is_array( $oData ) ) {
 				foreach ( $oData as $cData ) {
@@ -126,7 +125,7 @@ class Extension extends BaseExtension {
 	 * @return BS\UsageTracker\CollectorResult[]
 	 */
 	public function getUsageDataFromDB( $aConfig = null ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'bs_usagetracker',
 			[
@@ -155,7 +154,7 @@ class Extension extends BaseExtension {
 	protected function initializeCollectors( $aConfig = null ) {
 		if ( $aConfig === null ) {
 			// Get all the collectors definitions
-			MediaWikiServices::getInstance()->getHookContainer()->run(
+			$this->services->getHookContainer()->run(
 				'BSUsageTrackerRegisterCollectors',
 				[
 					&$this->aCollectorsConfig
