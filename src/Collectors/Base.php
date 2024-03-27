@@ -14,6 +14,9 @@ abstract class Base {
 	 */
 	protected $config = [];
 
+	/** @var MediaWikiServices */
+	protected $services;
+
 	/**
 	 *
 	 * @param array $config
@@ -25,6 +28,7 @@ abstract class Base {
 			}
 		}
 		$this->config = $config;
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	/**
@@ -58,7 +62,7 @@ abstract class Base {
 			\Title::newFromText( $this->identifier . wfTimestampNow() ),
 			$this->config
 		);
-		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $oJob );
+		$this->services->getJobQueueGroup()->push( $oJob );
 		return true;
 	}
 }

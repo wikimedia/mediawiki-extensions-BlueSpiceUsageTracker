@@ -22,7 +22,7 @@ class Tag extends Base {
 	 * @return \BS\UsageTracker\CollectorResult
 	 */
 	public function getUsageData() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			[ 'page', 'revision', 'text' ],
 			[ 'old_text' ],
