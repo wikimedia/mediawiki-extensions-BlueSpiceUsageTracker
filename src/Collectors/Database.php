@@ -61,7 +61,7 @@ class Database extends Base {
 			throw new \MWException( "UsageTracker::DatabaseCollector: table or columns are not set." );
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			[ $this->table ],
 			$this->uniqueColumns,
