@@ -8,10 +8,10 @@
 			"Yurina Tatiana"
 		]
 	},
-	"bs-usagetracker-db-collector-desc": "Количество $1",
-	"bs-usagetracker-open-tasks": "В настоящее время проводится Анализ сайта  . {{PLURAL:$1|Один анализ|$1 анализы}} остается открытым(и). <a href='$2'>(Обновить)</a>",
-	"bs-usagetracker-col-desc": "Описание",
-	"bs-usagetracker-col-identifier": "Идентификатор",
-	"bs-usagetracker-col-count": "Количество",
-	"bs-usagetracker-col-last-updated": "Последнее обновление"
+	"bs-usagetracker-db-collector-desc": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e $1",
+	"bs-usagetracker-open-tasks": "\u0412 \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0435\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0410\u043d\u0430\u043b\u0438\u0437 \u0441\u0430\u0439\u0442\u0430  . {{PLURAL:$1|\u041e\u0434\u0438\u043d \u0430\u043d\u0430\u043b\u0438\u0437|$1 \u0430\u043d\u0430\u043b\u0438\u0437\u044b}} \u043e\u0441\u0442\u0430\u0435\u0442\u0441\u044f \u043e\u0442\u043a\u0440\u044b\u0442\u044b\u043c(\u0438). <a href='$2'>(\u041e\u0431\u043d\u043e\u0432\u0438\u0442\u044c)<\/a>",
+	"bs-usagetracker-col-desc": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435",
+	"bs-usagetracker-col-identifier": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440",
+	"bs-usagetracker-col-count": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e",
+	"bs-usagetracker-col-last-updated": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435"
 }
