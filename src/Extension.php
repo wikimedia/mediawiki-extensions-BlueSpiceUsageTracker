@@ -33,8 +33,8 @@
 namespace BS\UsageTracker;
 
 use BlueSpice\Extension as BaseExtension;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 class Extension extends BaseExtension {

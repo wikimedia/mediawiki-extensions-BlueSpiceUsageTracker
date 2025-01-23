@@ -27,8 +27,8 @@
 namespace BS\UsageTracker\Hook;
 
 use BlueSpice\Hook;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 
 abstract class BSUsageTrackerRegisterCollectors extends Hook {
 
