@@ -30,6 +30,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 
 $IP = realpath( dirname( dirname( __DIR__ ) ) );
 
