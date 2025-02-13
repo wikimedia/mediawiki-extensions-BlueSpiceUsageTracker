@@ -82,8 +82,6 @@ class ShowInstanceStats extends Maintenance {
 			->getConfigFactory()
 			->makeConfig( 'bsg' )
 			->get( 'BlueSpiceExtInfo' );
-		$mwversionobj = new MediaWikiVersionFetcher;
-		$mwversion = $mwversionobj->fetchVersion();
 		$usagetracker = [];
 
 		foreach ( $usagetrackerdata as $data ) {
@@ -101,7 +99,7 @@ class ShowInstanceStats extends Maintenance {
 			"timestamp" => date( DATE_ISO8601 ),
 			"bluespice-version" => $bsextensioninfo['version'],
 			"bluespice-edition" => $bsextensioninfo['package'],
-			"mediawiki-version" => $mwversion,
+			"mediawiki-version" => MW_VERSION,
 			"sitestats" => call_user_func_array( 'array_merge', $sitestats ),
 			"usagetracker" => call_user_func_array( 'array_merge', $usagetracker )
 		];
