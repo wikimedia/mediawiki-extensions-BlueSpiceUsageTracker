@@ -12,7 +12,6 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  */
 class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 3;
-	protected $tablesUsed = [ 'bs_usagetracker' ];
 
 	protected function skipAssertTotal() {
 		return true;
