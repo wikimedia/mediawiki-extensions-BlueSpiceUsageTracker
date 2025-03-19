@@ -93,7 +93,8 @@ class Extension extends BaseExtension {
 				foreach ( $oData as $cData ) {
 					$dbw->delete(
 						'bs_usagetracker',
-						[ 'ut_identifier' => $cData['identifier'] ]
+						[ 'ut_identifier' => $cData['identifier'] ],
+						__METHOD__
 					);
 					// Update the count
 					$dbw->insert(
@@ -112,7 +113,8 @@ class Extension extends BaseExtension {
 				// Each usage number is only stored once. So delete any old values first.
 				$dbw->delete(
 					'bs_usagetracker',
-					[ 'ut_identifier' => $oData->identifier ]
+					[ 'ut_identifier' => $oData->identifier ],
+					__METHOD__
 				);
 				// Update the count
 				$dbw->insert(
