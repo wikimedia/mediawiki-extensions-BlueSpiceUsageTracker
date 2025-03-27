@@ -31,6 +31,7 @@
 
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\WikiMap\WikiMap;
 
 $IP = realpath( dirname( dirname( __DIR__ ) ) );
@@ -78,10 +79,6 @@ class ShowInstanceStats extends Maintenance {
 
 		$em = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		$usagetrackerdata = $em->getExtension( 'BlueSpiceUsageTracker' )->getUsageDataFromDB();
-		$bsextensioninfo = MediaWikiServices::getInstance()
-			->getConfigFactory()
-			->makeConfig( 'bsg' )
-			->get( 'BlueSpiceExtInfo' );
 		$usagetracker = [];
 
 		foreach ( $usagetrackerdata as $data ) {
@@ -97,8 +94,8 @@ class ShowInstanceStats extends Maintenance {
 		$instanceStats = [
 			"instance" => sha1( WikiMap::getCurrentWikiId() ),
 			"timestamp" => date( DATE_ISO8601 ),
-			"bluespice-version" => $bsextensioninfo['version'],
-			"bluespice-edition" => $bsextensioninfo['package'],
+			"bluespice-version" => $this->getVersion(),
+			"bluespice-edition" => $this->getEdition(),
 			"mediawiki-version" => MW_VERSION,
 			"sitestats" => call_user_func_array( 'array_merge', $sitestats ),
 			"usagetracker" => call_user_func_array( 'array_merge', $usagetracker )
@@ -148,6 +145,37 @@ class ShowInstanceStats extends Maintenance {
 					->caller( __METHOD__ )
 					->fetchRowCount();
 		return $res;
+	}
+
+	/**
+	 * @return string
+	 */
+	private function getVersion(): string {
+		return $this->getFileContent( $GLOBALS['IP'] . '/BLUESPICE-VERSION' );
+	}
+
+	/**
+	 * @return string
+	 */
+	private function getEdition(): string {
+		return $this->getFileContent( $GLOBALS['IP'] . '/BLUESPICE-EDITION' );
+	}
+
+	/**
+	 * Reads a file, sanitises its contents, and trims whitespace.
+	 *
+	 * @param string $filePath
+	 * @return string
+	 */
+	private function getFileContent( string $filePath ): string {
+		$content = '';
+		if ( file_exists( $filePath ) ) {
+			$fileContent = file_get_contents( $filePath );
+			$content = Sanitizer::stripAllTags( $fileContent );
+			$content = trim( $content );
+		}
+
+		return $content;
 	}
 }
 
