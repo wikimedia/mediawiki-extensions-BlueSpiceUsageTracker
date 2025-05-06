@@ -9,6 +9,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @group BlueSpice
  * @group BlueSpiceExtensions
  * @group BlueSpiceUsageTracker
+ * @covers \BS\UsageTracker\Api\UsageTrackerStore
  */
 class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 3;
