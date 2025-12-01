@@ -43,8 +43,7 @@
 				"name": "ut_timestamp",
 				"type": "mwtimestamp",
 				"options": {
-					"notnull": true,
-					"default": ""
+					"notnull": true
 				}
 			}
 		],
