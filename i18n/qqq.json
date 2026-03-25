@@ -1,11 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226",
 			"Markus Glaser <glaser@hallowelt.com>"
 		]
 	},
-	"bs-usagetracker-desc": "Used in [{{canonicalurl:Special:Usage_Tracker}} Special:Usage_Tracker], description of usagetracker extension",
+	"bs-usagetracker-desc": "Description of UsageTracker extension",
 	"prefs-usagetracker": "Used in [[Special:Usage_Tracker]], headline for UsageTracker section in preferences.",
 	"usagetracker": "Label for special page in list of special pages",
 	"bs-usagetracker-startjobs": "Used in [[Special:Usage_Tracker]], label for button to trigger update of statistics",
