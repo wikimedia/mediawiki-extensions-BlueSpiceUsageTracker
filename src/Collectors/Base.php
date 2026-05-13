@@ -1,8 +1,6 @@
 <?php
 namespace BS\UsageTracker\Collectors;
 
-use BS\UsageTracker\Jobs\UsageTrackerCollectJob;
-use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -19,9 +17,6 @@ abstract class Base {
 
 	/** @var MediaWikiServices */
 	protected $services;
-
-	/** @var JobQueueGroup */
-	protected $jobQueueGroup;
 
 	/** @var ILoadBalancer */
 	protected $loadBalancer;
@@ -41,7 +36,6 @@ abstract class Base {
 		}
 		$this->config = $config;
 		$this->services = MediaWikiServices::getInstance();
-		$this->jobQueueGroup = $this->services->getJobQueueGroup();
 		$this->loadBalancer = $this->services->getDBLoadBalancer();
 	}
 
@@ -66,14 +60,4 @@ abstract class Base {
 	 * @return \BS\UsageTracker\CollectorResult
 	 */
 	abstract public function getUsageData();
-
-	/**
-	 *
-	 * @return bool
-	 */
-	public function registerJob() {
-		$job = new UsageTrackerCollectJob( $this->config );
-		$this->jobQueueGroup->push( $job );
-		return true;
-	}
 }

@@ -45,15 +45,16 @@
 			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfUsersPerGroup::callback",
 			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfPagesByPageProperty::callback",
 			"BlueSpice\\UsageTracker\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfPageContentModels::callback"
-		]
+		],
+		"SetupAfterCache": "registerUpdateCron"
 	},
 	"HookHandlers": {
 		"runDatabaseUpdates": {
 			"class": "BlueSpice\\UsageTracker\\Hook\\LoadExtensionSchemaUpdates\\AddUsageTrackerTable"
+		},
+		"registerUpdateCron": {
+			"class": "BlueSpice\\UsageTracker\\Hook\\RegisterUpdateCron"
 		}
-	},
-	"JobClasses": {
-		"usageTrackerCollectJob": "BS\\UsageTracker\\Jobs\\UsageTrackerCollectJob"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
