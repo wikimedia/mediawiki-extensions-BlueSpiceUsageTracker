@@ -12,6 +12,8 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @covers \BS\UsageTracker\Api\UsageTrackerStore
  */
 class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
+
+	/** @var int */
 	protected $iFixtureTotal = 3;
 
 	protected function skipAssertTotal() {
@@ -45,7 +47,6 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	/**
-	 *
 	 * @return int
 	 */
 	public function addDBData() {
@@ -76,7 +77,6 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getModuleName() {
@@ -84,7 +84,6 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function provideSingleFilterData() {
@@ -95,7 +94,6 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function provideMultipleFilterData() {
@@ -121,7 +119,6 @@ class UsageTrackerStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function provideKeyItemData() {
