@@ -14,7 +14,7 @@ class NoOfCategories extends BSUsageTrackerRegisterCollectors {
 				'identifier' => 'no-of-categories',
 				'internalDesc' => 'Number of categories',
 				'table' => 'categorylinks',
-				'uniqueColumns' => [ 'cl_to' ]
+				'uniqueColumns' => [ 'cl_target_id' ]
 			]
 		];
 	}
